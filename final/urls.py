@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from dangky import views
 from dangnhap import views
+from nhanvien import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home),
     path('dangky', include('dangky.urls')),
     path('dangnhap', include('dangnhap.urls')),
+    path('nhanvien', include('nhanvien.urls')),
 ]

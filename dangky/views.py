@@ -14,13 +14,17 @@ def xuly_dangky(request):
     ten = request.GET.get('tenDangNhap')
     mail = request.GET.get('email')
     mk = request.GET.get('matkhau')
+    rol = request.GET.get('role')
     if (len(ten) < 5):
         return render(request, 'loi.html')
     else:
         data = NguoiDung(
             ten_dang_nhap = ten,
             email = mail,
-            mat_khau = mk
+            mat_khau = mk,
+            role = rol,
         )
         data.save()
         return render(request, 'dangnhap.html')
+    
+    
