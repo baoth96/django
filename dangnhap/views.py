@@ -19,7 +19,11 @@ def xuly_dangnhap(request):
     b = int(a.get("role"))
     print(b)
     if(b == 1):
-         return render(request, 'nhanvien.html')
+         context = {
+            'ten' :ten,
+            'mk' :mk
+        }
+         return render(request, 'nhanvien.html',context)
     elif (b == 2):
          print("truong phong")
     
