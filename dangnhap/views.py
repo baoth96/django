@@ -17,13 +17,14 @@ def xuly_dangnhap(request):
     lst = list(data_role)
     a = lst[0]
     b = int(a.get("role"))
-    print(b)
+
     if(b == 1):
          context = {
-            'ten' :ten,
-            'mk' :mk
+            'ten' : ten,
+            'mk' : mk,
         }
-         return render(request, 'nhanvien.html',context)
+         return render(request, 'nhanvien.html', context)
+
     elif (b == 2):
-         print("truong phong")
+        print("truong phong")
     

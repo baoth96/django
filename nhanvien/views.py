@@ -6,7 +6,6 @@ from dangky.models import NguoiDung
 def home(request):
     return render(request, 'dangky/home.html')
 
-def nhanvien(request, id):
-    print("id nhan vien", id)
+def nhanvien(request):
     return render(request, 'nhanvien.html')
 
