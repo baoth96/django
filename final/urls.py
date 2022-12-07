@@ -18,6 +18,7 @@ from django.urls import path, include
 from dangky import views
 from dangnhap import views
 from nhanvien import views
+from truongphong import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +26,5 @@ urlpatterns = [
     path('dangky', include('dangky.urls')),
     path('dangnhap', include('dangnhap.urls')),
     path('nhanvien', include('nhanvien.urls')),
+    path('truongphong', include('truongphong.urls'))
 ]

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'dangnhap',
     'dangky',
     'nhanvien',
+    'truongphong',
 ]
 
 MIDDLEWARE = [
