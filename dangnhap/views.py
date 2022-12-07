@@ -26,11 +26,6 @@ def xuly_dangnhap(request):
         return render(request, 'nhanvien.html', context)
 
     elif (b == 2):
-        # context = {
-        #     'ten' : ten,
-        #     'mk' : mk,
-        # }
-        print("truong phong")
         return render(request, 'truongphong.html')
        
     
