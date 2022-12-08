@@ -10,7 +10,8 @@
 </head>
 <body style="text-align: center">
     <h1>Danh Sách Nhân Viên</h1>
-    <form action="{%url 'xuly_dangnhap' %}">
+    <form action="">
+        {% if dsnd %}
         <table class="table table-success table-striped">
             <thead>
                 <tr>
@@ -18,18 +19,25 @@
                 <th scope="col">Tên đăng nhập</th>
                 <th scope="col">Email</th>
                 <th scope="col">Mật khẩu</th>
+                <th scope="col">Cập nhật</th>
                 </tr>
             </thead>
             <tbody>
+                {% for dt in dsnd%}
                 <tr>
-                <th scope="row">1</th>
-                <td> </td>
-                <td> </td>
-                <td> </td>
+                <th>{{dt.id}}</th>
+                <td>{{dt.ten_dang_nhap}}</td>
+                <td>{{dt.email}}</td>
+                <td>{{dt.mat_khau}}</td>
+                <td>
+                   <a href="{% url 'xuly_xoa' dt.id %}"> <button type="button" class="btn btn-warning">Xóa</button></a>
+                   <a href="{% url 'cap_nhat_nhan_vien' dt.id %}"> <button type="button" class="btn btn-primary">Chỉnh sửa</button></a>
+                </td>
                 </tr>
-                
+                {% endfor %}
             </tbody>
         </table>
+        {% endif %}
 </form>
 </body>
 </html>

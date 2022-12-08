@@ -4,4 +4,5 @@ from nhanvien import views
 
 urlpatterns = [
     path('/nhanvien/<int:id>/', views.nhanvien),
+    path('/<int:id>/', views.xuly_capnhat, name='xuly_capnhat'),
 ]

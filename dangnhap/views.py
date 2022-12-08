@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from dangky.models import NguoiDung
 
 # Create your views here.
@@ -26,6 +26,37 @@ def xuly_dangnhap(request):
         return render(request, 'nhanvien.html', context)
 
     elif (b == 2):
-        return render(request, 'truongphong.html')
+        data = NguoiDung.objects.all()
+        context = {
+            'dsnd': data,
+        }
+        return render(request, 'truongphong.html', context)
        
-    
+def xuly_xoa(request, nguoidung_id):
+    data = get_object_or_404(NguoiDung, pk = nguoidung_id)
+    data.delete()
+    danh_sach = NguoiDung.objects.all()
+    context = {
+        'dsnd': danh_sach,
+    }
+    return render(request, 'truongphong.html', context)
+
+def xuly_capnhat(request):
+    id_nguoidung = request.GET.get('id_nguoidung')
+    ten = request.GET.get('ten')
+    mail = request.GET.get('mail')
+    mk = request.GET.get('matkhau')
+
+    NguoiDung.objects.filter(id = id_nguoidung).update(
+        ten_dang_nhap = ten,
+        email = mail,
+        mat_khau = mk,
+    )
+
+    data = NguoiDung.objects.filter(ten_dang_nhap = ten, mat_khau = mk)
+
+    danh_sach = NguoiDung.objects.all()
+    context = {
+        'dsnd': danh_sach,
+    }
+    return render(request, 'truongphong.html', context)

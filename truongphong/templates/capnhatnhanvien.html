@@ -11,10 +11,11 @@
     
     <h1>Cập Nhật Thông Tin</h1>
     <br>
-    <form action="{%url 'xuly_capnhat' %}">
+    <form action="{% url 'xu_ly_cap_nhat' %}">
         <table align="center">
             <tr>
                 <td class="trai">Tên đăng nhập</td>
+
                 <input type="hidden" name="id_nguoidung" id="id_nguoidung" value="{{nd.id}}">
                 <td><input type="text" name="ten" id="ten" value="{{nd.ten_dang_nhap}} "></td>
             </tr>
