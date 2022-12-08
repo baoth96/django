@@ -40,23 +40,3 @@ def xuly_xoa(request, nguoidung_id):
         'dsnd': danh_sach,
     }
     return render(request, 'truongphong.html', context)
-
-# def xuly_capnhat(request):
-#     id_nguoidung = request.GET.get('id_nguoidung')
-#     ten = request.GET.get('ten')
-#     mail = request.GET.get('mail')
-#     mk = request.GET.get('matkhau')
-
-#     NguoiDung.objects.filter(id = id_nguoidung).update(
-#         ten_dang_nhap = ten,
-#         email = mail,
-#         mat_khau = mk,
-#     )
-
-#     data = NguoiDung.objects.filter(ten_dang_nhap = ten, mat_khau = mk)
-
-#     danh_sach = NguoiDung.objects.all()
-#     context = {
-#         'dsnd': danh_sach,
-#     }
-#     return render(request, 'truongphong.html', context)
