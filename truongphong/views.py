@@ -33,3 +33,13 @@ def xu_ly_cap_nhat(request):
     }
     return render(request, 'truongphong.html', context)
 
+def tim_kiem(request):
+
+    ten = request.GET.get('ten')
+
+    data = NguoiDung.objects.filter(ten_dang_nhap__icontains = ten)
+
+    context = {
+        'dsnd': data,
+    }
+    return render(request, 'truongphong.html', context)
