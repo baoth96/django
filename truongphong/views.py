@@ -36,10 +36,18 @@ def xu_ly_cap_nhat(request):
 def tim_kiem(request):
 
     ten = request.GET.get('ten')
-
-    data = NguoiDung.objects.filter(ten_dang_nhap__icontains = ten)
+    _type = request.GET.get('type')
+    print(_type)
+    print(type(_type))
+    
+    if(_type == '1'):
+        data = NguoiDung.objects.filter(ten_dang_nhap__icontains = ten)
+    elif(_type == '2'):
+        data = NguoiDung.objects.filter(email__icontains = ten)
 
     context = {
         'dsnd': data,
     }
     return render(request, 'truongphong.html', context)
+
+  

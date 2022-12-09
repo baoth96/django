@@ -20,7 +20,6 @@ def xuly_dangnhap(request):
 
     if (b == 1):
         nguoi_dung = NguoiDung.objects.filter(ten_dang_nhap = ten, mat_khau = mk).values("id","ten_dang_nhap", "email", "mat_khau")
-        print("hello",nguoi_dung)
         lst = list(nguoi_dung)
         context = {
            'id' : lst[0]['id'],
