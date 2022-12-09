@@ -19,9 +19,15 @@ def xuly_dangnhap(request):
     b = int(a.get("role"))
 
     if (b == 1):
+        nguoi_dung = NguoiDung.objects.filter(ten_dang_nhap = ten, mat_khau = mk).values("id","ten_dang_nhap", "email", "mat_khau")
+        print("hello",nguoi_dung)
+        lst = list(nguoi_dung)
         context = {
-            'ten' : ten,
-            'mk' : mk,
+           'id' : lst[0]['id'],
+           'ten_dang_nhap' : lst[0]['ten_dang_nhap'],
+           'email' : lst[0]['email'],
+           'mat_khau' : lst[0]['mat_khau'],
+
         }
         return render(request, 'nhanvien.html', context)
 

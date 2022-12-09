@@ -25,7 +25,7 @@
             <tbody>
                 {% for dt in dsnd%}
                 <tr>
-                <th>{{dt.id}}</th>
+                <th>{{forloop.counter}}</th>
                 <td>{{dt.ten_dang_nhap}}</td>
                 <td>{{dt.email}}</td>
                 <td>{{dt.mat_khau}}</td>
