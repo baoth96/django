@@ -22,13 +22,14 @@
 
 <body>
     <form action="{%url 'xuly_dangky' %}" method="GET">
-        <h1 >Đăng Ký</h1>
+        <br>
+        <h1 class="text-success">Register Form</h1>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-3">
                 </div>
                 <div class="col-6">
-                    <label for="tenDangNhap" class="form-label">Tên Đăng Nhập</label>
+                    <label for="tenDangNhap" class="form-label">User name</label>
                     <input type="text" class="form-control" id="tenDangNhap" name="tenDangNhap" placeholder="Nhập tên">
                 </div>
             </div>
@@ -46,7 +47,7 @@
                 <div class="col-3">
                 </div>
                 <div class="col-6">
-                    <label for="matkhau" class="form-label">Mật Khẩu</label>
+                    <label for="matkhau" class="form-label">Password</label>
                     <input type="password" class="form-control" id="matkhau" name="matkhau" placeholder="Nhập Mật Khẩu">
                 </div>
             </div>
@@ -57,15 +58,15 @@
                     <label for="role" class="form-label">Role</label>
                     <select name="role" class="form-control" id="role">
                         <option  selected>Role</option>
-                        <option value="1">Nhân viên</option>
-                        <option value="2">Trưởng phòng</option>
+                        <option value="1">Staff</option>
+                        <option value="2">Manager</option>
                     </select>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12 class_btn">
                     <br>
-                    <button type="submit" class="btn btn-primary">Đăng ký</button>
+                    <button type="button" class="btn btn-success">Register</button>
                 </div>
             </div>
             
