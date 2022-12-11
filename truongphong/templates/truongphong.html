@@ -47,10 +47,10 @@
             <thead>
                 <tr>
                     <th scope="col">STT</th>
-                    <th scope="col">Tên đăng nhập</th>
+                    <th scope="col">User name</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Mật khẩu</th>
-                    <th scope="col">Cập nhật</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Update</th>
                 </tr>
             </thead>
             <tbody>
@@ -62,9 +62,9 @@
                     <td>{{dt.mat_khau}}</td>
                     <td>
                         <a href="{% url 'xuly_xoa' dt.id %}"> <button type="button"
-                                class="btn btn-warning">Xóa</button></a>
+                            class="btn btn-danger">Delete</button></a>
                         <a href="{% url 'cap_nhat_nhan_vien' dt.id %}"> <button type="button"
-                                class="btn btn-primary">Chỉnh sửa</button></a>
+                            class="btn btn-info">Edit now</button></a>
                     </td>
                 </tr>
                 {% endfor %}
