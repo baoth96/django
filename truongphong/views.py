@@ -37,8 +37,6 @@ def tim_kiem(request):
 
     ten = request.GET.get('ten')
     _type = request.GET.get('type')
-    print(_type)
-    print(type(_type))
     
     if(_type == '1'):
         data = NguoiDung.objects.filter(ten_dang_nhap__icontains = ten)
