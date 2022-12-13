@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,8 +17,9 @@
             text-align: center
         }
     </style>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 </head>
-<body>
+<body class="hinhnen">
     <br>
     <h1 class="text-primary">Login Form</h1>
     <form action="{%url 'xuly_dangnhap' %}">
