@@ -1,0 +1,8 @@
+body {
+    background-color: blue;
+    text-align: center;
+}
+
+.hinhnen {
+    background: url("/static/img/leo.jpg") 50% 0 no-repeat fixed;
+}
