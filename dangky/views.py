@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from dangky.models import NguoiDung
+from django.core.mail import send_mail
 
 # Create your views here.
 
@@ -25,6 +26,16 @@ def xuly_dangky(request):
             role = rol,
         )
         data.save()
+
+        #Send email
+        send_mail(
+            'Chuc Mung',
+            'Ban da dang ky thanh cong!',
+            'vipronbk@gmail.com',
+            [mail, 'techguyinfo@gmail.com'],
+            fail_silently=False
+        )
+
         return render(request, 'dangnhap.html')
     
     
