@@ -1,2 +1,10 @@
-a = "yog" *2 *3
-print(a)
+a = {1: 'a', 2: 'b'}
+b = {1: 'a', 2: 'b'}
+for key, value in a.items():
+    print(key, value)
+for m, n in b.items():
+    print(m, n)
+sum = key + m
+x = value + n
+print(sum)
+print(x)
